@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use DB;
+// use App\Http\Requests\UserFormRequest;
+use App\Http\Requests\BulletinBoard\UserFormRequest;
+
 
 use App\Models\Users\Subjects;
 
@@ -57,10 +60,11 @@ class RegisterController extends Controller
         return view('auth.register.register', compact('subjects'));
     }
 
-    public function registerPost(Request $request)
+    public function registerPost(UserFormRequest $request)
     {
         DB::beginTransaction();
-        try{
+        try {
+            // DD($request);
             $old_year = $request->old_year;
             $old_month = $request->old_month;
             $old_day = $request->old_day;
@@ -79,11 +83,12 @@ class RegisterController extends Controller
                 'role' => $request->role,
                 'password' => bcrypt($request->password)
             ]);
+            // DD($user_get);
             $user = User::findOrFail($user_get->id);
             $user->subjects()->attach($subjects);
             DB::commit();
             return view('auth.login.login');
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollback();
             return redirect()->route('loginView');
         }

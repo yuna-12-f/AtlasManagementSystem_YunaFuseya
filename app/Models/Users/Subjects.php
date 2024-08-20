@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Users\User;
 
+
 class Subjects extends Model
 {
     const UPDATED_AT = null;
@@ -15,7 +16,8 @@ class Subjects extends Model
         'subject'
     ];
 
-    public function users(){
-        return;// リレーションの定義
+    public function users()
+    {
+        return $this->belongsTo('App\Models\Users\user', 'subject_users', 'subject_id', 'user_id'); // リレーションの定義
     }
 }
