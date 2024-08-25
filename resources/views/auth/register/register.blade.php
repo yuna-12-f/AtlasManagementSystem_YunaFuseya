@@ -121,9 +121,6 @@
                         <option value="2010">2010</option>
                     </select>
                     <label style="font-size:13px">年</label>
-                    @error('old_year')
-                        <li class="error_message">{{ $message }}</li>
-                    @enderror
                     <select class="old_month" name="old_month">
                         <option value="none">-----</option>
                         <option value="01">1</option>
@@ -140,9 +137,6 @@
                         <option value="12">12</option>
                     </select>
                     <label style="font-size:13px">月</label>
-                    @error('old_month')
-                        <li class="error_message">{{ $message }}</li>
-                    @enderror
                     <select class="old_day" name="old_day">
                         <option value="none">-----</option>
                         <option value="01">1</option>
@@ -178,6 +172,12 @@
                         <option value="31">31</option>
                     </select>
                     <label style="font-size:13px">日</label>
+                    @error('old_year')
+                        <li class="error_message">{{ $message }}</li>
+                    @enderror
+                    @error('old_month')
+                        <li class="error_message">{{ $message }}</li>
+                    @enderror
                     @error('old_day')
                         <li class="error_message">{{ $message }}</li>
                     @enderror

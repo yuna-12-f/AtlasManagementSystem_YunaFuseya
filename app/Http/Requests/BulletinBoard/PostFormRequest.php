@@ -26,6 +26,7 @@ class PostFormRequest extends FormRequest
         return [
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:5000',
+            // 'comment' => 'required|string|max:250',
         ];
     }
 
@@ -36,6 +37,8 @@ class PostFormRequest extends FormRequest
             'post_title.max' => 'タイトルは100文字以内で入力してください。',
             'post_body.required' => '内容は入力必須です。',
             'post_body.max' => '最大文字数は5000文字です。',
+            // 'comment.required' => 'コメントは入力必須です。',
+            // 'comment.max' => 'コメントは250文字以内で入力してください。',
         ];
     }
 }
