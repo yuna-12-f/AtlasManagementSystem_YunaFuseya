@@ -14,7 +14,6 @@ class MainCategory extends Model
 
     public function subCategories()
     {
-        // リレーションの定義
-        return $this->belongsTo('App\Models\Categories\SubCategory');
+        return $this->hasMany('App\Models\Categories\SubCategory', 'main_category_id');
     }
 }

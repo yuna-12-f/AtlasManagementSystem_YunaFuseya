@@ -29,9 +29,11 @@
                                 @endif
                             </div>
                             <div>
-                                @foreach ($post->subCategories as $subCategory)
-                                    <li>{{ $subCategory->sub_category }}</li>
-                                @endforeach
+                                <ul>
+                                    @foreach ($post->subCategories as $subCategory)
+                                        <li>{{ $subCategory->sub_category }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>

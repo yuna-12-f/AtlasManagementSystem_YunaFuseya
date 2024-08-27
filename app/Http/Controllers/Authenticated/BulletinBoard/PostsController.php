@@ -19,18 +19,22 @@ class PostsController extends Controller
 {
     public function show(Request $request)
     {
-        $posts = Post::with('user', 'postComments')->get();
+        $posts = Post::with('user', 'postComments', 'subCategories')->get();
         $categories = MainCategory::get();
         $sub_categories = SubCategory::get();
         $like = new Like;
         $post_comment = new Post;
         if (!empty($request->keyword)) {
-            $posts = Post::with('user', 'postComments')
+            $posts = Post::with('user', 'postComments', 'subCategories')
                 ->where('post_title', 'like', '%' . $request->keyword . '%')
                 ->orWhere('post', 'like', '%' . $request->keyword . '%')->get();
         } else if ($request->category_word) {
             $sub_category = $request->category_word;
-            $posts = Post::with('user', 'postComments')->get();
+            $posts = Post::with('user', 'postComments', 'subCategories')
+                ->whereHas('subCategories', function ($query) use ($sub_category) {
+                    $query->where('sub_category', $sub_category);
+                })
+                ->get();
         } else if ($request->like_posts) {
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')
@@ -39,6 +43,7 @@ class PostsController extends Controller
             $posts = Post::with('user', 'postComments')
                 ->where('user_id', Auth::id())->get();
         }
+        // dd($sub_categories);
         return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'like', 'post_comment', 'sub_categories'));
     }
 
@@ -61,8 +66,15 @@ class PostsController extends Controller
         $post = Post::create([
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
-            'post' => $request->post_body
+            'post' => $request->post_body,
         ]);
+
+        // サブカテゴリーのIDをリクエストから取得
+        $subCategoryIds = $request->sub_category_id; // サブカテゴリーIDの配列
+        // dd($subCategoryIds);
+
+        $post->subCategories()->attach($subCategoryIds);
+
         return redirect()->route('post.show');
     }
 
