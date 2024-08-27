@@ -31,7 +31,9 @@
                             <div>
                                 <ul>
                                     @foreach ($post->subCategories as $subCategory)
-                                        <li>{{ $subCategory->sub_category }}</li>
+                                        <li>
+                                            {{ $subCategory->sub_category }}
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -60,7 +62,9 @@
                     @foreach ($sub_categories as $subCategory)
                         <li class="sub_categories_name" sub_category_id="{{ $subCategory->id }}"
                             main_category_id="{{ $subCategory->main_category_id }}">
-                            <span>{{ $subCategory->sub_category }}</span>
+                            <a href="{{ route('post.show', ['category_word' => $subCategory->sub_category]) }}">
+                                {{ $subCategory->sub_category }}
+                            </a>
                         </li>
                     @endforeach
                 </ul>
