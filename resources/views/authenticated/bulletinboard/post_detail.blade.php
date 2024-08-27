@@ -8,6 +8,13 @@
                         <div>
                         </div>
                         <div>
+                            <ul>
+                                @foreach ($post->subCategories as $subCategory)
+                                    <li>{{ $subCategory->sub_category }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div>
                             @if (Auth::id() == $post->user_id)
                                 <span class="edit-modal-open" post_title="{{ $post->post_title }}"
                                     post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
