@@ -95,26 +95,37 @@
                                 <option value="4" class="">生徒</option>
                             </select>
                         </div>
-                        <div class="selected_engineer">
+                        {{-- <div class="selected_engineer">
                             <label>選択科目</label>
                             <div>
                                 <label>
-                                    <input type="checkbox" name="subjects[]" value="国語" form="userSearchRequest">
+                                    <input type="checkbox" name="subjects[]" value="1" form="userSearchRequest">
                                     国語
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input type="checkbox" name="subjects[]" value="数学" form="userSearchRequest">
+                                    <input type="checkbox" name="subjects[]" value="2" form="userSearchRequest">
                                     数学
                                 </label>
                             </div>
                             <div>
                                 <label>
-                                    <input type="checkbox" name="subjects[]" value="英語" form="userSearchRequest">
+                                    <input type="checkbox" name="subjects[]" value="3" form="userSearchRequest">
                                     英語
                             </div>
-                        </div>
+                        </div> --}}
+
+                        @foreach ($subjects as $subject)
+                            <div>
+                                <label>
+                                    <input type="checkbox" name="subjects[]" value="{{ $subject->id }}"
+                                        form="userSearchRequest">
+                                    {{ $subject->subject }}
+                                </label>
+                            </div>
+                        @endforeach
+
                     </div>
                     <div>
                         <input type="reset" value="リセット" form="userSearchRequest">
