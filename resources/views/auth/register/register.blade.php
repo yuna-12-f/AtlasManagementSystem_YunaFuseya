@@ -220,11 +220,12 @@
                 <div class="mt-3">
                     <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
                     <div class="border-bottom border-primary">
-                        <input type="password" class="border-0 w-100 password_confirmation" name="password">
+                        <input type="password" class="border-0 w-100 password_confirmation"
+                            name="password_confirmation">
                     </div>
-                    @error('password_confirmation')
+                    {{-- @error('password_confirmation')
                         <li class="error_message">{{ $message }}</li>
-                    @enderror
+                    @enderror --}}
                 </div>
                 <div class="mt-5 text-right">
                     <input a href="/register" type="submit" class="btn btn-primary register_btn" disabled
