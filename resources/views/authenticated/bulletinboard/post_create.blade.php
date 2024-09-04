@@ -43,7 +43,13 @@
                     <div class="">
                         <p class="m-0">メインカテゴリー</p>
                         <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
+
+                        @error('main_category_name')
+                            <span class="error_message">{{ $message }}</span>
+                        @enderror
+
                         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
+
                     </div>
                     <div class="">
                         <p class="m-0">サブカテゴリー</p>
@@ -53,6 +59,11 @@
                                 <option value="{{ $mainCategory->id }}">{{ $mainCategory->main_category }}</option>
                             @endforeach
                         </select>
+                        @if ($errors->has('main_category_id'))
+                            <span class="error_message">{{ $errors->first('main_category_id') }}</span>
+                        @endif
+                        <input type="text" class="w-100 mb-2" name="sub_category_name" form="subCategoryRequest"
+                            placeholder="サブカテゴリー名">
                         @if ($errors->has('sub_category_name'))
                             <ul class="error_messages">
                                 @foreach ($errors->get('sub_category_name') as $message)
@@ -60,8 +71,6 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <input type="text" class="w-100 mb-2" name="sub_category_name" form="subCategoryRequest"
-                            placeholder="サブカテゴリー名">
                         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
                     </div>
                     <!-- サブカテゴリー追加 -->

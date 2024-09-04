@@ -14,6 +14,7 @@ use App\Http\Requests\BulletinBoard\PostFormRequest;
 use Auth;
 use App\Http\Requests\BulletinBoard\CommentFormRequest;
 use App\Http\Requests\BulletinBoard\SubcategoryFormRequest;
+use App\Http\Requests\BulletinBoard\MaincategoryFormRequest;
 
 class PostsController extends Controller
 {
@@ -100,7 +101,7 @@ class PostsController extends Controller
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
-    public function mainCategoryCreate(Request $request)
+    public function mainCategoryCreate(MainCategoryFormRequest $request)
     {
         MainCategory::create([
             'main_category' => $request->main_category_name
