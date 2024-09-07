@@ -18,4 +18,43 @@
 
     {{-- モーダル --}}
     {{-- js --}}
+
+    {{-- <div class="modal">
+        <div class="inner">
+            <!-- モーダル本体 -->
+            <div class="modal__wrapper">
+                <div class="modal__layer"></div>
+                <div class="modal__container">
+                    <div class="modal__inner">
+
+                        <div class="modal__content">
+
+                            <span class="close">&times;</span>
+                            <h2>キャンセル確認</h2>
+                            <p><strong>予約日:</strong></p>
+                            <p><strong>予約時間:</strong></p>
+                            <button id="confirmCancelButton" class="btn btn-danger">キャンセルする</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> --}}
+
+    <!-- モーダルの中身 -->
+    <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+
+            <p class="modal_day"><strong>予約日:</strong></p>
+            <p class="modal_part"><strong>時間:</strong></p>
+            <p>上記の予約をキャンセルしてよろしいですか？</p>
+            <a class="js-modal-close" href="">閉じる</a>
+            <button id="confirmCancelButton" class="btn btn-danger">キャンセルする</button>
+            {{ csrf_field() }}
+        </div>
+    </div>
 @endsection
