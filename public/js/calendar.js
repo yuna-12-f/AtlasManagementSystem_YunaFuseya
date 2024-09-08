@@ -8,10 +8,25 @@ $(function () {
         // 押されたボタンから投稿のidを取得し変数へ格納（どの投稿を編集するか特定するのに必要な為）
         var cancelPart = $(this).attr('cancelPart');
 
+        // リモ部を数値に変換
+        var partNumber;
+        if (cancelPart === 'リモ1部') {
+            partNumber = 1;
+        } else if (cancelPart === 'リモ2部') {
+            partNumber = 2;
+        } else if (cancelPart === 'リモ3部') {
+            partNumber = 3;
+        }
+
         // 取得した投稿内容をモーダルの中身へ渡す
         $('.modal_day').text('予約日：' + cancelDay);
         // 取得した投稿のidをモーダルの中身へ渡す
         $('.modal_part').text('予約時間：' + cancelPart);
+
+        // モーダル内のinput要素に値を設定
+        $('input[name="cancelDay"]').val(cancelDay);  // hidden input の value に予約日を設定
+        $('input[name="partNumber"]').val(partNumber);  // hidden input の value に予約時間を設定
+
         return false;
     });
 
