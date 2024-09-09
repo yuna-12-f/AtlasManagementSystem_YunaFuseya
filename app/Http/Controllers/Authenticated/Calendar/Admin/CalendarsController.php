@@ -50,30 +50,4 @@ class CalendarsController extends Controller
         }
         return redirect()->route('calendar.admin.setting', ['user_id' => Auth::id()]);
     }
-
-    // public function reserveCounts($date)
-    // {
-    //     // 1部、2部、3部それぞれの予約人数をカウント
-    //     $onePartCount = ReserveSettings::where('setting_reserve', $date)
-    //         ->where('setting_part', 1)
-    //         ->withCount('users')
-    //         ->first()?->users_count ?? 0;
-
-    //     $twoPartCount = ReserveSettings::where('setting_reserve', $date)
-    //         ->where('setting_part', 2)
-    //         ->withCount('users')
-    //         ->first()?->users_count ?? 0;
-
-    //     $threePartCount = ReserveSettings::where('setting_reserve', $date)
-    //         ->where('setting_part', 3)
-    //         ->withCount('users')
-    //         ->first()?->users_count ?? 0;
-
-    //     // 結果を配列として返す
-    //     return [
-    //         'onePartCount' => $onePartCount,
-    //         'twoPartCount' => $twoPartCount,
-    //         'threePartCount' => $threePartCount,
-    //     ];
-    // }
 }
