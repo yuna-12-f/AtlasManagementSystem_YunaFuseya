@@ -15,9 +15,13 @@ use Auth;
 use App\Http\Requests\BulletinBoard\CommentFormRequest;
 use App\Http\Requests\BulletinBoard\SubcategoryFormRequest;
 use App\Http\Requests\BulletinBoard\MaincategoryFormRequest;
+// use Carbon\Carbon;
 
 class PostsController extends Controller
 {
+
+    // public $timestamps = true;
+
     public function show(Request $request)
     {
         $posts = Post::with('user', 'postComments', 'subCategories')->get();
@@ -68,6 +72,8 @@ class PostsController extends Controller
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
             'post' => $request->post_body,
+            // 'created_at' => Carbon::now(),
+
         ]);
 
         // サブカテゴリーのIDをリクエストから取得

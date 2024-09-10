@@ -11,31 +11,36 @@
                     <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
                     <div class="post_bottom_area d-flex">
                         <div class="d-flex post_status">
-                            <div class="mr-5">
-                                <i class="fa fa-comment"></i>
-                                <span class="comment_counts{{ $post->id }}">{{ $post->postComments->count() }}</span>
-                            </div>
-                            <div>
-                                @if (Auth::user()->is_Like($post->id))
-                                    <p class="m-0"><i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
-                                        {{-- <span class="like_counts{{ $post->id }}"></span> --}}
-                                        <span class="like_counts{{ $post->id }}">{{ $post->like->count() }}</span>
-                                    </p>
-                                @else
-                                    <p class="m-0"><i class="fas fa-heart like_btn" post_id="{{ $post->id }}"></i>
-                                        {{-- <span class="like_counts{{ $post->id }}"></span> --}}
-                                        <span class="like_counts{{ $post->id }}">{{ $post->like->count() }}</span>
-                                    </p>
-                                @endif
-                            </div>
-                            <div>
+                            <div class="post_subcategory">
                                 <ul>
                                     @foreach ($post->subCategories as $subCategory)
-                                        <li>
+                                        <li class="category_btn">
                                             {{ $subCategory->sub_category }}
                                         </li>
                                     @endforeach
                                 </ul>
+                            </div>
+                            <div class="post_reaction">
+                                <div class="mr-5">
+                                    <i class="fa fa-comment"></i>
+                                    <span
+                                        class="comment_counts{{ $post->id }}">{{ $post->postComments->count() }}</span>
+                                </div>
+                                <div>
+                                    @if (Auth::user()->is_Like($post->id))
+                                        <p class="m-0"><i class="fas fa-heart un_like_btn"
+                                                post_id="{{ $post->id }}"></i>
+                                            {{-- <span class="like_counts{{ $post->id }}"></span> --}}
+                                            <span class="like_counts{{ $post->id }}">{{ $post->like->count() }}</span>
+                                        </p>
+                                    @else
+                                        <p class="m-0"><i class="fas fa-heart like_btn"
+                                                post_id="{{ $post->id }}"></i>
+                                            {{-- <span class="like_counts{{ $post->id }}"></span> --}}
+                                            <span class="like_counts{{ $post->id }}">{{ $post->like->count() }}</span>
+                                        </p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,9 +65,10 @@
                 </ul>
                 <ul>
                     @foreach ($sub_categories as $subCategory)
-                        <li class="sub_categories_name" sub_category_id="{{ $subCategory->id }}"
+                        <li class="sub_categories_name " sub_category_id="{{ $subCategory->id }}"
                             main_category_id="{{ $subCategory->main_category_id }}">
-                            <a href="{{ route('post.show', ['category_word' => $subCategory->sub_category]) }}">
+                            <a class="category_btn"
+                                href="{{ route('post.show', ['category_word' => $subCategory->sub_category]) }}">
                                 {{ $subCategory->sub_category }}
                             </a>
                         </li>

@@ -80,6 +80,18 @@ li {
     width: 70%;
 }
 
+.btn0 {
+    border-radius: .25rem;
+    padding: 7px 30px;
+    margin-right: 400px;
+}
+
+.btn1 {
+    border-radius: .25rem;
+    padding: 5px 30px;
+    border: none;
+}
+
 /* モーダル */
 .modal {
     display: none;
@@ -150,6 +162,24 @@ li {
     color: red;
 }
 
+.post_reaction {
+    margin-left: auto;
+    display: flex;
+}
+
+.d-flex {
+    width: 100%
+}
+
+.post_btn_gray {
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    line-height: 1;
+    padding: 2px;
+}
+
 /* 掲示板 詳細画面 */
 .contributor {
     font-size: 12px;
@@ -168,7 +198,7 @@ li {
 
 .detail_inner_head {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .edit-modal-open {
@@ -182,6 +212,10 @@ li {
 
 .edit-modal-btn {
     justify-content: space-between;
+}
+
+.edit_delete {
+    margin-left: auto;
 }
 
 /* 掲示板 コメント */

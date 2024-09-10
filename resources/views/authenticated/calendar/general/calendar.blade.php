@@ -29,9 +29,11 @@
                 <input type="hidden" name="cancelDay" class="modal_day" value="">
                 <input type="hidden" name="partNumber" class="modal_part" value="">
                 <p>上記の予約をキャンセルしてよろしいですか？</p>
-                <a class="js-modal-close" href="#">閉じる</a>
-                <button id="confirmCancelButton" class="btn btn-danger">キャンセルする</button>
-                {{ csrf_field() }}
+                <div>
+                    <a class="js-modal-close btn0 btn-primary" href="#">閉じる</a>
+                    <button id="confirmCancelButton" class="btn1 btn-danger">キャンセルする</button>
+                    {{ csrf_field() }}
+                </div>
             </form>
         </div>
     </div>
