@@ -257,11 +257,11 @@ li {
 }
 
 .category_btn {
-    font-size: 12px;
+    /* font-size: 12px; */
     border-radius: 5px;
     padding: 0 5px;
     border: none;
-    background: #999;
+    background: #03AAD2;
     color: #FFF;
 }
 
@@ -289,18 +289,22 @@ li {
 }
 
 .one_person {
-    width: 250px;
-    height: 250px;
+    width: 185px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    padding: 0 5px 5px;
 }
 
 .search_conditions span {
     cursor: pointer;
 }
 
-.search_conditions_inner {
-    /* display:none; */
-    background: #FFF;
-}
+/* .search_conditions_inner { */
+/* display:none; */
+/* background: #FFF; */
+/* } */
 
 .subject_edit_btn {
     font-size: 12px;
@@ -337,4 +341,238 @@ li {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+}
+
+/* login.blade.php */
+.login-border {
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    width: 26%;
+}
+
+.atlasLogo {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+/* posts.blade.php */
+.postbrn {
+    border-radius: 5px;
+    padding: 0 5px;
+    border: none;
+    background: #03AAD2;
+    color: #FFF;
+    margin-bottom: 15px;
+}
+
+.postbtn_a {
+    color: inherit;
+}
+
+.post_name {
+    color: inherit;
+    font-weight: bolder;
+}
+
+.postbrn_like {
+    border-radius: 5px;
+    padding: 0 5px;
+    border: none;
+    background: #ffb6c1;
+    color: #FFF;
+}
+
+.postbrn_mine {
+    border-radius: 5px;
+    padding: 0 5px;
+    border: none;
+    background: #ffd700;
+    color: #FFF;
+    width: 100px;
+}
+
+/*アコーディオンメニュー */
+.accordion {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 300px;
+    position: relative;
+    width: 100%;
+}
+
+.accordion-title {
+    /* color: #fff;
+    cursor: pointer; */
+    font-size: 20px;
+    /* padding: 10px 30px;
+    justify-content: end;
+    margin-left: 15px; */
+}
+
+.accordion-content {
+    display: none;
+    color: #808080;
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: 100%; */
+    /* z-index: 10; */
+    /* background-color: #fffffb; */
+    /* width: 100%; */
+    /* border: none; */
+}
+
+.accordion-content p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* コンテンツボックスの枠線 */
+/* .accordion-item:nth-of-type(1) .accordion-content {
+    border-bottom: 2px solid #333;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+} */
+
+/* 矢印 */
+
+.accordion-title {
+    position: relative;
+    padding-right: 50px;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+.accordion-title::after {
+    border-right: solid 2px #3b3939;
+    border-top: solid 2px #3b3939;
+    content: "";
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    /* 矢印を垂直方向で中央に揃える */
+    transform: translateY(-50%) rotate(135deg);
+    /* 矢印を下向きに */
+    transition: transform .3s ease-in-out;
+    width: 8px;
+}
+
+.js-accordion-title.open::after {
+    transform: translateY(-50%) rotate(-45deg);
+    /* 矢印を上向きに変更 */
+}
+
+.post_ul {
+    margin-bottom: 0;
+}
+
+.sub_categories_name {
+    margin: 5px 20px;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+.post_input {
+    border-radius: 5px;
+    border: none;
+}
+
+.main_categories {
+    color: #808080;
+}
+
+.post_p {
+    margin: 5px 0;
+    color: #808080;
+}
+
+/* post_detail.blade.php */
+.post_btn_style {
+    border-radius: 7px;
+    padding: 5px 15px;
+}
+
+/* search.blade.php */
+.free_word {
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.free_select {
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 7px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.free_select_role {
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 7px;
+    /* margin-left: 10px; */
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.search_word {
+    color: #708080;
+    font-size: 20px;
+    margin: 20px 10px 15px;
+}
+
+.category_word {
+    color: #708080;
+    margin-left: 10px;
+}
+
+.category_sex {
+    color: #708080;
+    margin: 0;
+}
+
+.btn_search {
+    padding: 5px 120px;
+    margin: 15px 30px;
+}
+
+.search_reset {
+    outline: none;
+    border: none;
+    color: #03AAD2;
+    margin-left: 135px;
+}
+
+.search_add {
+    margin-left: 10px;
+}
+
+.search_span {
+    color: #708080;
+}
+
+.label_black {
+    color: black;
+}
+
+.label_black_sub {
+    color: black;
+    margin-right: 10px;
+}
+
+.subcategory_select {
+    display: flex;
+}
+
+.sex_size {
+    margin: 10px 0;
 }

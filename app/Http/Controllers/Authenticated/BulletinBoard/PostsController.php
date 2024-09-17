@@ -15,7 +15,7 @@ use Auth;
 use App\Http\Requests\BulletinBoard\CommentFormRequest;
 use App\Http\Requests\BulletinBoard\SubcategoryFormRequest;
 use App\Http\Requests\BulletinBoard\MaincategoryFormRequest;
-// use Carbon\Carbon;
+use App\Http\Requests\BulletinBoard\EditPostFormRequest;
 
 class PostsController extends Controller
 {
@@ -93,7 +93,7 @@ class PostsController extends Controller
     //     return redirect()->route('post.show', ['post' => $postId]);
     // }
 
-    public function postEdit(Request $request)
+    public function postEdit(EditPostFormRequest $request)
     {
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,

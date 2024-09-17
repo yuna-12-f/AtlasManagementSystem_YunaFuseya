@@ -4,9 +4,13 @@
         <div class="w-50 mt-5">
             <div class="m-3 detail_container">
                 <div class="p-3">
+                    @error('post_title')
+                        <li class="error_message">{{ $message }}</li>
+                    @enderror
+                    @error('post_body')
+                        <li class="error_message">{{ $message }}</li>
+                    @enderror
                     <div class="detail_inner_head">
-                        <div>
-                        </div>
                         <div>
                             <ul>
                                 @foreach ($post->subCategories as $subCategory)
@@ -16,9 +20,9 @@
                         </div>
                         <div class="edit_delete">
                             @if (Auth::id() == $post->user_id)
-                                <span class="edit-modal-open" post_title="{{ $post->post_title }}"
+                                <span class="edit-modal-open btn-danger post_btn_style" post_title="{{ $post->post_title }}"
                                     post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-                                <a href="{{ route('post.delete', ['id' => $post->id]) }}"
+                                <a class="btn-primary post_btn_style" href="{{ route('post.delete', ['id' => $post->id]) }}"
                                     onclick="return confirm('この投稿を削除してもよろしいですか？')">
                                     削除
                                 </a>
@@ -56,10 +60,10 @@
         <div class="w-50 p-3">
             <div class="comment_container border m-5">
                 <div class="comment_area p-3">
-                    <p class="m-0">コメントする</p>
                     @error('comment')
                         <li class="error_message">{{ $message }}</li>
                     @enderror
+                    <p class="m-0">コメントする</p>
                     <textarea class="w-100" name="comment" form="commentRequest"></textarea>
                     <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
                     <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AtlasBulletinBoard</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap"
@@ -18,8 +18,9 @@
 
 <body>
     <form action="{{ route('loginPost') }}" method="POST">
-        <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-            <div class="border vh-50 w-25">
+        <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center; flex-direction: column">
+            <h1><img class="atlasLogo" src="{{ asset('/image/atlas-black.png') }}"></h1>
+            <div class="border vh-50 w-25 login-border">
                 <div class="w-75 m-auto pt-5">
                     <label class="d-block m-0" style="font-size:13px;">メールアドレス</label>
                     <div class="border-bottom border-primary w-100">
@@ -36,7 +37,7 @@
                     <input a href="/top" type="submit" class="btn btn-primary" value="ログイン">
                 </div>
                 <div class="text-center">
-                    <a href="{{ route('registerView') }}">新規登録</a>
+                    <a href="{{ route('registerView') }}">新規登録はこちら</a>
                 </div>
             </div>
             {{ csrf_field() }}
