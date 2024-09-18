@@ -19,7 +19,7 @@ class CalendarView
         return $this->carbon->format('Y年n月');
     }
 
-    function render()
+    public function render()
     {
         $html = [];
         $html[] = '<div class="calendar text-center">';
@@ -31,8 +31,8 @@ class CalendarView
         $html[] = '<th>水</th>';
         $html[] = '<th>木</th>';
         $html[] = '<th>金</th>';
-        $html[] = '<th>土</th>';
-        $html[] = '<th>日</th>';
+        $html[] = '<th class="day-sat">土</th>';
+        $html[] = '<th class="day-sun">日</th>';
         $html[] = '</tr>';
         $html[] = '</thead>';
         $html[] = '<tbody>';

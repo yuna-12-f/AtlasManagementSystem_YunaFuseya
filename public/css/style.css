@@ -299,6 +299,7 @@ li {
 
 .search_conditions span {
     cursor: pointer;
+    font-size: 20px;
 }
 
 /* .search_conditions_inner { */
@@ -306,16 +307,51 @@ li {
 /* background: #FFF; */
 /* } */
 
+
 .subject_edit_btn {
-    font-size: 12px;
-    color: #0000FF;
     cursor: pointer;
+    position: relative;
+    /* 矢印の位置調整のため */
+    padding-right: 45px;
+    font-size: 16px;
+    color: #00bfff;
 }
 
 .subject_inner {
     display: none;
 }
 
+.subject_edit_btn::after {
+    border-right: solid 2px #3b3939;
+    border-top: solid 2px #3b3939;
+    content: "";
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    /* 矢印を垂直方向で中央に揃える */
+    transform: translateY(-50%) rotate(135deg);
+    /* 矢印を下向きに */
+    transition: transform 0.3s ease-in-out;
+    width: 8px;
+    color: #00bfff;
+}
+
+.subject_edit_btn.open::after {
+    transform: translateY(-50%) rotate(-45deg);
+    /* 矢印を上向きに変更 */
+}
+
+.search_edit {
+    margin-top: 10px;
+}
+
+.edit_sub {
+    display: flex;
+    margin-top: 10px;
+    align-items: flex-end;
+}
 
 /* モーダル */
 .modal {
@@ -575,4 +611,42 @@ li {
 
 .sex_size {
     margin: 10px 0;
+}
+
+.reserve {
+    background-color: white;
+}
+
+.text-center :nth-child(even) {
+    background-color: #e0ffff;
+}
+
+.reserve_border {
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.reserve_table {
+    width: 100%;
+}
+
+.reserve_ID {
+    text-align: center;
+    background-color: #03AAD2;
+    border-radius: 9px 0 0;
+    color: white;
+}
+
+.reserve_name {
+    text-align: center;
+    background-color: #03AAD2;
+    color: white;
+}
+
+.reserve_place {
+    text-align: center;
+    background-color: #03AAD2;
+    border-radius: 0 9px 0 0;
+    color: white;
 }
