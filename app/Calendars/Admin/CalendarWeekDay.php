@@ -16,7 +16,16 @@ class CalendarWeekDay
 
     function getClassName()
     {
-        return "day-" . strtolower($this->carbon->format("D"));
+        // return "day-" . strtolower($this->carbon->format("D"));
+        // 曜日を判定してクラス名を付与
+        if ($this->carbon->isSaturday()) {
+            return 'day-sat';
+        } elseif ($this->carbon->isSunday()) {
+            return 'day-sun';
+        }
+
+        // その他の曜日はデフォルトのクラス名を付与
+        return 'day-' . strtolower($this->carbon->format("D"));
     }
 
     function render()

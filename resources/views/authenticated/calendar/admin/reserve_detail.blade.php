@@ -13,15 +13,15 @@
                     </tr>
                     @if ($reservePersons && $reservePersons->users->first())
                         @foreach ($reservePersons->users as $user)
-                            <tr class="text-center">
+                            <tr class="text-center_reserve">
                                 <td class="w-25 reserve">{{ $user->id }}</td>
                                 <td class="w-25 reserve">{{ $user->over_name }}{{ $user->under_name }}</td>
                                 <td class="w-25 reserve">リモート</td>
                             </tr>
                         @endforeach
                     @else
-                        <tr class="text-center">
-                            <td colspan="2">予約者がいません</td>
+                        <tr class="text-center_reserve">
+                            <td colspan="3">予約者がいません</td>
                         </tr>
                     @endif
                 </table>

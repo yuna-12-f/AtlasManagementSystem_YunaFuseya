@@ -29,6 +29,7 @@ class CalendarWeek
         return 'day-' . strtolower($this->carbon->format("D"));
 
         // return "week-" . $this->index;
+
     }
 
     function getDays()

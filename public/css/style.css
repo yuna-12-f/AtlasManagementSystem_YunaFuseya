@@ -613,12 +613,16 @@ li {
     margin: 10px 0;
 }
 
-.reserve {
+/* .reserve {
     background-color: white;
+} */
+
+tr.text-center_reserve:nth-child(even) {
+    background-color: #e0ffff;
 }
 
-.text-center :nth-child(even) {
-    background-color: #e0ffff;
+.text-center_reserve {
+    text-align: center;
 }
 
 .reserve_border {

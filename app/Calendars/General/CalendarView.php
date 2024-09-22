@@ -47,7 +47,7 @@ class CalendarView
 
                 if ($startDay <= $day->everyDay() && $toDay >= $day->everyDay()) {
                     // 過去の日付の処理
-                    $html[] = '<td class="calendar-td past-day">';
+                    $html[] = '<td class="calendar-td past-day ' . $day->getClassName() . '">';
                 } else {
                     $html[] = '<td class="calendar-td ' . $day->getClassName() . '">';
                 }
