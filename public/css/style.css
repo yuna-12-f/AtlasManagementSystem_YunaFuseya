@@ -18,8 +18,8 @@ li {
 
 /* サイドバー */
 .sidebar {
-    width: 150px;
-    height: 100vh;
+    width: 175px;
+    min-height: 100vh;
     background-color: #03AAD2;
     font-weight: bold;
 }
@@ -59,13 +59,17 @@ li {
     min-width: 100px;
 }
 
+.calendar-color {
+    color: #000;
+}
+
 .day_part {
     color: #494949;
     font-size: 12px;
 }
 
 .adjust-table {
-    width: 70% !important;
+    /* width: 70% !important; */
 }
 
 .adjust-table td {
@@ -74,6 +78,7 @@ li {
 
 .adjust-area p {
     justify-content: space-around;
+    color: #000;
 }
 
 .adjust-table-btn {
@@ -653,4 +658,23 @@ tr.text-center_reserve:nth-child(even) {
     background-color: #03AAD2;
     border-radius: 0 9px 0 0;
     color: white;
+}
+
+/* reserve_setting.blade.php */
+.btn_reserve {
+    margin-left: 780px;
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+}
+
+.btn_parts {
+    margin-top: 20px;
+}
+
+.cala_year {
+    text-align: center;
+}
+
+.calendar_table {
+    margin: auto !important;
 }

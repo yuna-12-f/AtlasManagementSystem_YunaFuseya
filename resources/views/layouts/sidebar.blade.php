@@ -22,16 +22,54 @@
     <div class="d-flex">
         <div class="sidebar">
             @section('sidebar')
-                <p><a href="{{ route('top.show') }}">トップ</a></p>
-                <p><a href="/logout">ログアウト</a></p>
-                <p><a href="{{ route('calendar.general.show', ['user_id' => Auth::id()]) }}">スクール予約</a></p>
+                <p>
+                    <a href="{{ route('top.show') }}">
+                        <img src="{{ asset('/icon/home.svg') }}" alt="トップアイコン" style="width: 20px; height: 20px;">
+                        トップ
+                    </a>
+                </p>
+                <p>
+                    <a href="/logout">
+                        <img src="{{ asset('/icon/logout.svg') }}" alt="ログアウトアイコン" style="width: 20px; height: 20px;">
+                        ログアウト
+                    </a>
+                </p>
+                <p>
+                    <a href="{{ route('calendar.general.show', ['user_id' => Auth::id()]) }}">
+                        <img src="{{ asset('/icon/calendar_reserve.svg') }}" alt="スクール予約アイコン"
+                            style="width: 20px; height: 20px;">
+                        スクール予約
+                    </a>
+                </p>
                 <!-- 講師専用のサイドバー項目 -->
                 @if (Auth::check() && Auth::user()->role === 1)
-                    <p><a href="{{ route('calendar.admin.show', ['user_id' => Auth::id()]) }}">スクール予約確認</a></p>
-                    <p><a href="{{ route('calendar.admin.setting', ['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
+                    <p>
+                        <a href="{{ route('calendar.admin.show', ['user_id' => Auth::id()]) }}">
+                            <img src="{{ asset('/icon/event_available.svg') }}" alt="スクール予約確認アイコン"
+                                style="width: 20px; height: 20px;">
+                            スクール予約確認
+                        </a>
+                    </p>
+                    <p>
+                        <a href="{{ route('calendar.admin.setting', ['user_id' => Auth::id()]) }}">
+                            <img src="{{ asset('/icon/edit_calendar.svg') }}" alt="スクール枠登録アイコン"
+                                style="width: 20px; height: 20px;">
+                            スクール枠登録
+                        </a>
+                    </p>
                 @endif
-                <p><a href="{{ route('post.show') }}">掲示板</a></p>
-                <p><a href="{{ route('user.show') }}">ユーザー検索</a></p>
+                <p>
+                    <a href="{{ route('post.show') }}">
+                        <img src="{{ asset('/icon/chat.svg') }}" alt="掲示板アイコン" style="width: 20px; height: 20px;">
+                        掲示板
+                    </a>
+                </p>
+                <p>
+                    <a href="{{ route('user.show') }}">
+                        <img src="{{ asset('/icon/search.svg') }}" alt="ユーザー検索アイコン" style="width: 20px; height: 20px;">
+                        ユーザー検索
+                    </a>
+                </p>
             @show
         </div>
         <div class="main-container">

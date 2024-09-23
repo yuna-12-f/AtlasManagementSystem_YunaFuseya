@@ -23,7 +23,7 @@ class CalendarView
     {
         $html = [];
         $html[] = '<div class="calendar text-center">';
-        $html[] = '<table class="table">';
+        $html[] = '<table class="calendar_table table">';
         $html[] = '<thead>';
         $html[] = '<tr>';
         $html[] = '<th>月</th>';
@@ -47,7 +47,7 @@ class CalendarView
 
                 if ($startDay <= $day->everyDay() && $toDay >= $day->everyDay()) {
                     // 過去の日付の処理
-                    $html[] = '<td class="calendar-td past-day ' . $day->getClassName() . '">';
+                    $html[] = '<td class="past-day calendar-td ' . $day->getClassName() . '">';
                 } else {
                     $html[] = '<td class="calendar-td ' . $day->getClassName() . '">';
                 }
@@ -65,7 +65,7 @@ class CalendarView
                     }
                     if ($startDay <= $day->everyDay() && $toDay >= $day->everyDay()) {
                         // 過去の予約あり
-                        $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">' . $reservePart . '</p>';
+                        $html[] = '<p class="m-auto p-0 w-75 calendar-color" style="font-size:12px">' . $reservePart . '</p>';
                         $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
                     } else {
                         // 未来の予約あり
@@ -79,7 +79,7 @@ class CalendarView
 
                     if ($startDay <= $day->everyDay() && $toDay >= $day->everyDay()) {
                         //過去の予約なし
-                        $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
+                        $html[] = '<p class="m-auto p-0 w-75 calendar-color" style="font-size:12px">受付終了</p>';
                         $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
                     } else {
                         // 未来の予約なし
