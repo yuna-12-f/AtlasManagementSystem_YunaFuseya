@@ -440,28 +440,82 @@ li {
     text-align: center;
     margin-bottom: 15px;
     border-radius: 6px;
+    opacity: 0.7;
+    /* background-color: rgba(3, 170, 210, 0.4); */
+    border: #03AAD2;
 }
+
+.postbtn_a:hover {
+    cursor: pointer;
+    color: #fff;
+    opacity: 1;
+    transition: all .3s ease 0s;
+    text-decoration: none;
+}
+
+.postbtn_b {
+    color: #fff;
+}
+
 
 .post_name {
     color: inherit;
     font-weight: bolder;
 }
 
+.postbrn_like1 {
+    border-radius: 5px;
+    padding: 0 5px;
+    border: none;
+    background: #ff69b4;
+    color: #FFF;
+    opacity: 0.7;
+}
+
+.postbrn_like:hover {
+    cursor: pointer;
+    color: #fff;
+    opacity: 1;
+    transition: all .3s ease 0s;
+    text-decoration: none;
+}
+
 .postbrn_like {
     border-radius: 5px;
     padding: 0 5px;
     border: none;
-    background: #ffb6c1;
+    background: #ff69b4;
     color: #FFF;
+    opacity: 0.7;
+
+}
+
+.postbrn_mine1 {
+    border-radius: 5px;
+    padding: 0 5px;
+    border: none;
+    background: #ffa500;
+    color: #FFF;
+    opacity: 0.7;
+    margin-left: 5px;
+}
+
+.postbrn_mine:hover {
+    cursor: pointer;
+    color: #fff;
+    opacity: 1;
+    transition: all .3s ease 0s;
+    text-decoration: none;
 }
 
 .postbrn_mine {
     border-radius: 5px;
     padding: 0 5px;
     border: none;
-    background: #ffd700;
+    background: #ffa500;
     color: #FFF;
     width: 100px;
+    opacity: 0.7;
 }
 
 /*アコーディオンメニュー */

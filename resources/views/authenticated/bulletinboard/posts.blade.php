@@ -50,14 +50,24 @@
         </div>
         <div class="other_area border w-25">
             <div class="border m-4">
-                <div class=""><a class="postbtn_a" href="{{ route('post.input') }}">投稿</a></div>
+
+                <div class="postbtn_a">
+                    <a class="postbtn_b" href="{{ route('post.input') }}" style="text-decoration: none">投稿</a>
+                </div>
 
                 <div class="">
                     <input class="post_input" type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
                     <input class="postbrn" type="submit" value="検索" form="postSearchRequest">
                 </div>
-                <input type="submit" name="like_posts" class="postbrn_like" value="いいねした投稿" form="postSearchRequest">
-                <input type="submit" name="my_posts" class="postbrn_mine" value="自分の投稿" form="postSearchRequest">
+                <div style="display: flex;">
+                    <div class="postbrn_like1">
+                        <input type="submit" name="like_posts" class="postbrn_like" value="いいねした投稿"
+                            form="postSearchRequest">
+                    </div>
+                    <div class="postbrn_mine1">
+                        <input type="submit" name="my_posts" class="postbrn_mine" value="自分の投稿" form="postSearchRequest">
+                    </div>
+                </div>
 
                 {{-- <div class="accordion">
                     <div class="accordion-container">
