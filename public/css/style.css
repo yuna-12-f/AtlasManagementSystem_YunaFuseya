@@ -431,6 +431,7 @@ li {
     margin-bottom: 15px;
     text-align: center;
     text-decoration: none;
+
 }
 
 .postbtn_a {
@@ -456,7 +457,7 @@ li {
 }
 
 .postbtn_b {
-    color: #fff;
+    display: block;
 }
 
 
