@@ -50,7 +50,8 @@
         </div>
         <div class="other_area border w-25">
             <div class="border m-4">
-                <div class="postbrn"><a class="postbtn_a" href="{{ route('post.input') }}">投稿</a></div>
+                <div class=""><a class="postbtn_a" href="{{ route('post.input') }}">投稿</a></div>
+
                 <div class="">
                     <input class="post_input" type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
                     <input class="postbrn" type="submit" value="検索" form="postSearchRequest">

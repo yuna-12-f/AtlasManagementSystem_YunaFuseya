@@ -88,13 +88,24 @@ li {
 .btn0 {
     border-radius: .25rem;
     padding: 7px 30px;
-    margin-right: 400px;
+    /* margin-right: 400px */
 }
 
 .btn1 {
     border-radius: .25rem;
     padding: 5px 30px;
     border: none;
+}
+
+.collect_btn {
+    display: flex;
+}
+
+.btn-danger-calendar {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    margin-left: auto;
 }
 
 /* モーダル */
@@ -389,11 +400,25 @@ li {
     border-radius: 10px;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
     width: 26%;
+    background: #fff;
+}
+
+.login-border1 {
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    width: 26%;
+    background: #fff;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .atlasLogo {
     width: 150px;
     margin-bottom: 30px;
+}
+
+.background {
+    background: #ECF1F6;
 }
 
 /* posts.blade.php */
@@ -404,10 +429,17 @@ li {
     background: #03AAD2;
     color: #FFF;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .postbtn_a {
-    color: inherit;
+    background: #03AAD2;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 6px;
 }
 
 .post_name {
