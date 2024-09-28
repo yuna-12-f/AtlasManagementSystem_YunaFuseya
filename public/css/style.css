@@ -430,6 +430,7 @@ li {
     color: #FFF;
     margin-bottom: 15px;
     text-align: center;
+    text-decoration: none;
 }
 
 .postbtn_a {
@@ -443,6 +444,7 @@ li {
     opacity: 0.7;
     /* background-color: rgba(3, 170, 210, 0.4); */
     border: #03AAD2;
+    /* color: inherit; */
 }
 
 .postbtn_a:hover {
@@ -516,7 +518,7 @@ li {
     background: #ffa500;
     color: #FFF;
     width: 100px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /*アコーディオンメニュー */

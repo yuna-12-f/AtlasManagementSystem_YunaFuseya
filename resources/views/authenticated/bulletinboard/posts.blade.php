@@ -52,7 +52,8 @@
             <div class="border m-4">
 
                 <div class="postbtn_a">
-                    <a class="postbtn_b" href="{{ route('post.input') }}" style="text-decoration: none">投稿</a>
+                    <a class="postbtn_b" href="{{ route('post.input') }}"
+                        style="text-decoration: none; color: inherit;">投稿</a>
                 </div>
 
                 <div class="">
