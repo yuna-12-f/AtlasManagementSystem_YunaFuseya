@@ -497,7 +497,8 @@ li {
     background: #ffa500;
     color: #FFF;
     opacity: 0.7;
-    margin-left: 5px;
+    margin-left: 3px;
+    padding: 0px 15px;
 }
 
 .postbrn_mine:hover {
